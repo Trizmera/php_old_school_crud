@@ -18,12 +18,16 @@ $result = mysqli_query($conn, $sql);
             </tr>
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $row['Id'] ?></td>
+                    <td><?= $row['name'] ?></td>
+                    <td><?= $row['description'] ?></td>
+                    <td><?= $row['created_at'] ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $row['id'] ?>">Edit</a>
+                        <a href="delete.php?id=<?= $row['id'] ?>"></a>
+                    </td>
                 </tr>
+            <?php endwhile; ?>
         </table>
     </body>
 </html>
